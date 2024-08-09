@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --main-background: #f6f8fc;
+  --hover-effect: #eaebef;
+  --search-input: #eaf1fb;
+  --search-input-click: #ffffff;
+  --nav-background: #f6f8fc;
+  --create-color: #c2e7ff;
+  --left-clik: #d3e3fd;
+  --mails-background: #ffffff;
+  --box-color: #f2f6fc;
+  --active-color: #d3e3fd;
+  --icon-size: 24px;
+}
+
+.flex, header .left, header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--nav-background);
+}
+
+header {
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  font-size: 21px;
+}
+header .left {
+  gap: 10px;
+}
+header .left .hamburger-menu {
+  padding: 5px;
+  font-size: var(--icon-size);
+}/*# sourceMappingURL=style.css.map */
