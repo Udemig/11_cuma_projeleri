@@ -1,22 +1,330 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-:root {
-  --main-background: #f6f8fc;
-  --hover-effect: #eaebef;
-  --search-input: #eaf1fb;
-  --search-input-click: #ffffff;
-  --nav-background: #f6f8fc;
-  --create-color: #c2e7ff;
-  --left-clik: #d3e3fd;
-  --mails-background: #ffffff;
-  --box-color: #f2f6fc;
-  --active-color: #d3e3fd;
-  --icon-size: 24px;
-}
-
-.flex, header .left, header {
+.flex, header .right, header .middle form .search, header .middle form, header .left, header, main .mail .right, main .mail .left, main .top .right, main .top .left .checkbox input, main .top {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icon, header .right i, header .middle form .settings i, header .middle form .search i, header .left .hamburger-menu i, main .mail .left i, main .top .right i, main .top .left i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.icon:hover, header .right i:hover, header .middle form .settings i:hover, header .middle form .search i:hover, header .left .hamburger-menu i:hover, main .mail .left i:hover, main .top .right i:hover, main .top .left i:hover {
+  background-color: #eaebef;
+}
+
+.flex, header .right, header .middle form .search, header .middle form, header .left, header, main .mail .right, main .mail .left, main .top .right, main .top .left .checkbox input, main .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon, header .right i, header .middle form .settings i, header .middle form .search i, header .left .hamburger-menu i, main .mail .left i, main .top .right i, main .top .left i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.icon:hover, header .right i:hover, header .middle form .settings i:hover, header .middle form .search i:hover, header .left .hamburger-menu i:hover, main .mail .left i:hover, main .top .right i:hover, main .top .left i:hover {
+  background-color: #eaebef;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  gap: 25px;
+}
+nav .create {
+  background-color: #c2e7ff;
+  padding: 20px;
+  display: flex;
+  gap: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+nav .create:hover {
+  box-shadow: 2px 2px 10px gray;
+}
+nav .nav-middle {
+  display: grid;
+  font-size: 16px;
+}
+nav .nav-middle .active {
+  background-color: #d3e3fd;
+  font-weight: bolder;
+  border-radius: 0px 20px 20px 0px;
+}
+nav .nav-middle a {
+  padding: 7px 12px 7px 26px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+}
+nav .nav-middle a:hover {
+  background-color: #eaebef;
+  border-radius: 0px 20px 20px 0px;
+}
+nav .nav-middle a i span {
+  pointer-events: none;
+}
+nav .nav-bottom div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex, header .right, header .middle form .search, header .middle form, header .left, header, main .mail .right, main .mail .left, main .top .right, main .top .left .checkbox input, main .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon, header .right i, header .middle form .settings i, header .middle form .search i, header .left .hamburger-menu i, main .mail .left i, main .top .right i, main .top .left i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.icon:hover, header .right i:hover, header .middle form .settings i:hover, header .middle form .search i:hover, header .left .hamburger-menu i:hover, main .mail .left i:hover, main .top .right i:hover, main .top .left i:hover {
+  background-color: #eaebef;
+}
+
+main {
+  background-color: #ffffff;
+  border-radius: 8px;
+  flex-grow: 1;
+}
+main .top {
+  justify-content: space-between;
+}
+main .top .left {
+  display: flex;
+  gap: 8px;
+}
+main .top .left i {
+  width: 25px;
+  height: 25px;
+}
+main .top .left .checkbox {
+  display: flex;
+  padding-left: 10px;
+  gap: 3px;
+}
+main .top .left .checkbox input {
+  width: 15px;
+  height: 20px;
+  border-radius: 0;
+}
+main .top .right {
+  justify-content: end;
+  /* justify-content flex aktifken elemanları yatayda hizalar. justify-items ise grid yapısı aktifken elemanları hizalamak için kullanılır.*/
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+main .top .right i {
+  width: 25px;
+  height: 25px;
+}
+main .top .right .passive {
+  color: rgb(174, 174, 174);
+}
+main .top .right .keyboard {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+main .top .right .keyboard i {
+  margin-top: 2px;
+  padding: 4px;
+  width: 15px;
+  height: 20px;
+  border-radius: 0;
+}
+main .mails-area {
+  height: 80vh;
+}
+main .mail {
+  height: 41px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 10px;
+  font-size: 16px;
+  background-color: #f2f6fc;
+  padding: 10px;
+  border-bottom: 1px solid rgb(218, 218, 218);
+  transition: box-shadow 0.3s;
+}
+main .mail:hover {
+  box-shadow: 0px 0px 10px rgb(211, 211, 211);
+}
+main .mail .left {
+  justify-content: start !important;
+  gap: 5px;
+}
+main .mail .left i {
+  width: 20px;
+  height: 20px;
+}
+main .mail .left span {
+  white-space: nowrap;
+}
+main .mail .right {
+  justify-content: space-between;
+  font-size: 17px;
+}
+main .mail .right .message-title {
+  font-weight: bold;
+  /*  white-space: nowrap elemanların alt alta gelmesini engeller yanyana hizalar.*/
+  white-space: nowrap;
+}
+main .mail .right .message-description {
+  margin-left: 14px;
+  width: 100%;
+}
+main .mail .right .message-date {
+  white-space: nowrap;
+  width: 100px;
+  font-size: 15px;
+}
+main .mail .right .delete {
+  background: none;
+  border: none;
+  outline: none;
+  justify-content: center;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  display: none;
+}
+main .mail:hover > .right .message-date {
+  display: none;
+}
+main .mail:hover > .right .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5px;
+}
+aside img {
+  width: 28px;
+  height: 28px;
+}
+aside span {
+  background-color: gray;
+  height: 2px;
+}
+
+.flex, header .right, header .middle form .search, header .middle form, header .left, header, main .top, main .top .left .checkbox input, main .top .right, main .mail .left, main .mail .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon, header .right i, header .middle form .settings i, header .middle form .search i, header .left .hamburger-menu i, main .top .left i, main .top .right i, main .mail .left i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.icon:hover, header .right i:hover, header .middle form .settings i:hover, header .middle form .search i:hover, header .left .hamburger-menu i:hover, main .top .left i:hover, main .top .right i:hover, main .mail .left i:hover {
+  background-color: #eaebef;
+}
+
+.modal-wrapper {
+  background-color: rgba(128, 128, 128, 0.2);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.modal-wrapper .modal-inner {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 80%;
+  border-radius: 10px;
+  padding: 40px;
+  position: relative;
+}
+.modal-wrapper .modal-inner #close-btn {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: red;
+}
+.modal-wrapper .modal-inner form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-wrapper .modal-inner form label {
+  margin-top: 40px;
+}
+.modal-wrapper .modal-inner form input,
+.modal-wrapper .modal-inner form textarea {
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 8px;
+  outline: none;
+}
+.modal-wrapper .modal-inner form textarea {
+  width: 100%;
+  min-height: 100px;
+  max-height: 150px;
+  resize: vertical;
+}
+.modal-wrapper .modal-inner form #send-mail-btn {
+  background-color: #c2e7ff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  transition: all 0.5s;
+}
+.modal-wrapper .modal-inner form #send-mail-btn:hover {
+  box-shadow: 0 0 10px gray;
 }
 
 * {
@@ -27,7 +335,17 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--nav-background);
+  background-color: var(#f6f8fc);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  display: flex;
+  gap: 20px;
 }
 
 header {
@@ -35,11 +353,91 @@ header {
   padding: 20px;
   gap: 20px;
   font-size: 21px;
+  height: 92px;
+  /*Header Left*/
+  /* Header Middle*/
+  /* Header Right*/
 }
 header .left {
   gap: 10px;
 }
 header .left .hamburger-menu {
   padding: 5px;
-  font-size: var(--icon-size);
+  font-size: var(24px);
+}
+header .left img,
+header .left span {
+  cursor: pointer;
+}
+header .middle {
+  width: 100%;
+}
+header .middle form {
+  justify-content: space-between;
+  background-color: #eaf1fb;
+  padding: 6px 10px;
+  gap: 10px;
+  border-radius: 30px;
+  max-width: 580px;
+}
+header .middle form .search {
+  gap: 10px;
+}
+header .middle form input {
+  border: none;
+  outline: none;
+  width: 450px;
+  font-size: 18px;
+  background: transparent;
+}
+header .right {
+  gap: 10px;
+}
+header .right img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hide .create span,
+.hide .nav-middle a span,
+.hide .nav-bottom span {
+  display: none;
+}
+
+#toggle {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  width: 75px;
+  height: 25px;
+  border-radius: 160px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1), inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+#toggle .indicator {
+  display: flex;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+}
+
+#toggle.active {
+  background: #7ea8b3;
+}
+
+#toggle.active .indicator {
+  left: 20px;
+}
+
+.darkMode {
+  background-color: #8dbbc9;
 }/*# sourceMappingURL=style.css.map */
