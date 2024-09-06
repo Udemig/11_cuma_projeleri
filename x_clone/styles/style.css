@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.5s;
+}
+
+.auth-page {
+  background-color: #1e1e1e;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.auth-page form {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 80px;
+  border: 1px solid #444444;
+  border-radius: 10px;
+  gap: 50px;
+  min-width: 450px;
+}
+.auth-page form div {
+  width: 100%;
+}
+.auth-page form img {
+  width: 80px;
+}
+.auth-page form input {
+  margin-top: 10px;
+}
+.auth-page form button {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.auth-page form button:hover {
+  background-color: rgba(255, 255, 255, 0.5764705882);
+}
+.auth-page form .warning {
+  max-width: 100%;
+  background-color: #f8d7da;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.feed {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+@media (min-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 600px 1fr;
+  }
+}
+
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+@media (min-width: 1300px) {
+  .left-bar {
+    align-items: end;
+    margin-right: 50px;
+  }
+}
+.left-bar img {
+  width: 80px;
+}
+@media (max-width: 1300px) {
+  .left-bar img {
+    width: 50px;
+  }
+}
+.left-bar nav {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1300px) {
+  .left-bar nav {
+    padding: 10px 20px;
+    align-items: end;
+  }
+}
+.left-bar nav a {
+  display: flex;
+  gap: 10px;
+  font-size: 19px;
+  padding: 20px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.left-bar nav a:hover {
+  background-color: rgb(50, 50, 50);
+}
+.left-bar nav button {
+  background-color: #1ea1f2;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.left-bar nav button:hover {
+  background-color: rgba(0, 97, 161, 0.512);
+}
+@media (max-width: 1300px) {
+  .left-bar nav button {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    padding: 0;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar nav i {
+    font-size: 26px;
+  }
+}
+.left-bar nav span {
+  white-space: nowrap;
+}
+@media (max-width: 1300px) {
+  .left-bar nav span {
+    display: none;
+  }
+}
+
+.user-info {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 1300px) {
+  .user-info {
+    flex-direction: column;
+    align-items: end;
+    margin-top: 70px;
+  }
+}
+.user-info img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.user-info button {
+  background-color: gray;
+  color: white;
+  border-radius: 6px;
+}
+@media (max-width: 1300px) {
+  .user-info button span {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .user-info p {
+    display: none;
+  }
+}
+
+main {
+  border: 1px solid rgb(50, 50, 50);
+  padding: 10px;
+  overflow: auto;
+  height: 100vh;
+}
+main header {
+  border-bottom: 1px solid rgb(70, 70, 70);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+main #post-tweets {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgb(50, 50, 50);
+  padding: 20px;
+}
+main #post-tweets img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+main #post-tweets .input-area {
+  width: 100%;
+}
+main #post-tweets .input-area input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: black;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+main #post-tweets .input-area .buttons {
+  display: flex;
+  justify-content: end;
+}
+main #post-tweets .input-area .buttons button {
+  background-color: #0e619b;
+  color: white;
+  padding: 10px;
+  border-radius: 60px;
+}
+main #post-tweets .input-area .buttons button:hover {
+  background-color: rgba(0, 98, 155, 0.608);
+}
+
+.tweets-area .tweet {
+  display: flex;
+  padding: 10px;
+  gap: 15px;
+  border-bottom: 2px solid rgb(28, 28, 28);
+  transition: all 0.5s;
+}
+.tweets-area .tweet:hover {
+  background-color: rgb(28, 28, 28);
+}
+.tweets-area .tweet .tweet-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */
