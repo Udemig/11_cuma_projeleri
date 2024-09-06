@@ -35,10 +35,30 @@ export function renderMails(outlet, data) {
 }
 
 // Metin ifadeleri belirli karakterden sonra kesecek fonksiyon
-
 function trimString(str, max) {
   // Eğer max karakter limitini aşmıyorsa veriyi döndür
   if (str.length < max) return str;
   // Max.karakterden büüykse bunu max karaktere bağlı olarak kes sonrasında ... ekle
   return str.slice(0, max) + "...";
+}
+
+export function renderCategories(outlet, data, selectCategory) {
+  // eski kategorileri sil
+  outlet.innerHTML = "";
+
+  // bize gelen diziyi forEach ile dönüp özelliklerini ekleme
+  data.forEach((category) => {
+    const categoryItem = document.createElement("a");
+    // kategori elemanına veri ekleme
+    categoryItem.dataset.name = category.title;
+    console.log(categoryItem);
+    // Aktif olan kategoriye active classı
+    categoryItem.className = selectCategory === category.title && "active";
+
+    categoryItem.innerHTML = `
+    <i class="${category.class}"></i>
+    <span>${category.title}</span>
+    `;
+    outlet.appendChild(categoryItem);
+  });
 }

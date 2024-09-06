@@ -1,7 +1,7 @@
 // console.log("Merhaba Dünya");
 
-import { months } from "./constants.js";
-import { renderMails, showModal } from "./ui.js";
+import { categories, months } from "./constants.js";
+import { renderCategories, renderMails, showModal } from "./ui.js";
 // ! HTML'den Elemanların Çekilmesi
 const body = document.querySelector("body");
 const btn = document.getElementById("toggle");
@@ -24,6 +24,9 @@ const mailData = JSON.parse(strMailData) || [];
 document.addEventListener("DOMContentLoaded", () => {
   renderMails(mailsArea, mailData);
 });
+// ! Search iconuna tıklayınca çalışan yapı
+searchButton.addEventListener("click", searchMails);
+
 // ! Mail Alanını Güncelle
 mailsArea.addEventListener("click", updateMail);
 
@@ -62,6 +65,7 @@ window.addEventListener("resize", (e) => {
     navigation.classList.remove("hide");
   }
 });
+categoryArea.addEventListener("click", watchCategory);
 // Toogle yapısı sayesinde dark / light mode eklendi
 btn.addEventListener("click", () => {
   btn.classList.toggle("active");
@@ -186,4 +190,30 @@ function updateMail(e) {
     localStorage.setItem("data", JSON.stringify(mailData));
     renderMails(mailsArea, mailData);
   }
+}
+
+// ! Kataegoriler kısımınında tıklam olunca çalışacak fonksiyon.
+function watchCategory(e) {
+  const leftNav = e.target.parentElement;
+  const selectedCategory = leftNav.dataset.name;
+  renderCategories(categoryArea, categories, selectedCategory);
+
+  if (selectedCategory === "Yıldızlananlar") {
+    // console.log(`Yıldız`);
+    const filtred = mailData.filter((i) => i.stared === true);
+    renderMails(mailsArea, filtred);
+    return;
+  }
+  renderMails(mailsArea, mailData);
+}
+
+// ! Arama Fonk.
+
+function searchMails() {
+  // İnput tan alınan veriye göre filtreleme yaptık
+  const filtredArray = mailData.filter((i) => {
+    return i.message.toLowerCase().includes(searchInput.value.toLowerCase());
+  });
+  // filtrelenen veriyi renderladık
+  renderMails(mailsArea, filtredArray);
 }
