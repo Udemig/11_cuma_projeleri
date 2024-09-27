@@ -1,0 +1,35 @@
+.news {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+}
+
+.news form {
+  background-color: rgb(40, 40, 40);
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 40px;
+  color: rgb(183, 181, 181);
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    color: rgb(183, 181, 181);
+  }
+}
+
+.trends {
+  background-color: rgb(40, 40, 40);
+  padding: 20px;
+  list-style: none;
+  min-width: 250px;
+  border-radius: 10px;
+  li {
+    padding: 10px;
+    border-bottom: 1px solid rgb(90, 90, 90);
+  }
+}
