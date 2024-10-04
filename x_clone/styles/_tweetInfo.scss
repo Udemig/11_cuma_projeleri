@@ -1,0 +1,64 @@
+.top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+// Tweet Detay
+.tweet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  // Kullanıcı Kıısmı
+  .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // Kullanıcı Bilgi
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    button {
+      border-radius: 10px;
+      margin-right: 20px;
+      &:hover {
+        background-color: rgb(157, 157, 157);
+      }
+    }
+  }
+}
+
+// Tweet Bilgileri
+.data {
+  display: flex;
+  gap: 20px;
+  p {
+    color: rgb(157, 157, 157);
+    .count {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+// Butonlar
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  button {
+    background: none;
+    color: gray;
+    border-radius: 50px;
+    &:hover {
+      background-color: rgba(152, 152, 152, 0.331);
+    }
+  }
+}

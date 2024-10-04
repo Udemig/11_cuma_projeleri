@@ -26,7 +26,7 @@ export class API {
         `https://twitter-api45.p.rapidapi.com/screenname.php?screenname=${username}`,
         options
       );
-      const data = res.json();
+      const data = await res.json();
       return data;
     } catch (error) {
       console.error(error);
