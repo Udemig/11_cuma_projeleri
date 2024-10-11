@@ -11,6 +11,19 @@ export const mainEle = {
   tweetsArea: document.querySelector(".tweets-area"),
   main: document.querySelector("main"),
   searchForm: document.querySelector(".news form"),
+  userName: document.querySelector("#user-name"),
+  userTagName: document.querySelector("#user-tag"),
+  userImage: document.querySelectorAll("#user-img"),
+};
+
+// Kullanıcı detaylarını render eden fonksiyon
+
+export const renderUserInfo = (user) => {
+  mainEle.userName.innerText = user.name;
+
+  mainEle.userTagName.innerText = user.profile;
+
+  mainEle.userImage.forEach((img) => (img.src = user.avatar));
 };
 
 // Ekrana Loader render edecek fonksiyon
@@ -75,14 +88,16 @@ export const renderTimeline = (user, tweets, outlet) => {
     .map(
       (tweet, i) => `
       <div class="tweet">
-           <img src="${user.avatar} " class="user-img" alt="" />
+           <img src="${
+             user ? user.avatar : `https://picsum.photos/20${i}`
+           } " class="user-img" alt="" />
           <div class="body">
             <a class="user" href='?user#${
               user ? user.profile : tweet.screen_name
             } '>
               <div class="info">
-                <h6>${tweet.author?.name}</h6>
-                <p>@${tweet.author?.screen_name}</p>
+                <h6>${user ? tweet.author?.name : tweet.screen_name}</h6>
+                <p>@${user ? tweet.author?.screen_name : tweet.screen_name}</p>
                 <p>${moment(tweet.created_at).fromNow()} </p>
               </div>
               <i class="bi bi-three-dots"></i>

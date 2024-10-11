@@ -7,9 +7,15 @@ import {
   renderInfo,
   renderLoader,
   renderTimeline,
+  renderUserInfo,
   renderUserPage,
 } from "./ui.js";
 
+// Sayfa yüklendiğinde çalışacak fonksiyon
+document.addEventListener("DOMContentLoaded", () => {
+  renderUserInfo(user);
+});
+// Kullanıcı verilerini al
 const user = getLocal("user");
 // console.log(name);
 
@@ -88,7 +94,7 @@ const controlURL = async () => {
     const data = await api.fetchData("/search.php", "query", id);
 
     // Api dan alınan değere göre tweetleri render et
-    renderTimeline(user, data.timeline, mainEle.main);
+    renderTimeline(null, data.timeline, mainEle.main);
   }
 };
 
