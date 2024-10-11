@@ -1,0 +1,226 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Diğer Scss dosyalarından gelen importlar
+@import "./reset";
+@import "./mixin";
+
+// Ortak Css
+
+body {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  height: 100%;
+}
+.container {
+  background-color: white;
+  max-width: 120rem;
+  margin: 4vw auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.502);
+  @include laptop {
+    margin: auto;
+    min-height: 100vh;
+  }
+}
+
+// Grid Areas
+.logo {
+  grid-area: logo;
+}
+
+.search_form {
+  grid-area: search;
+}
+.likes {
+  grid-area: likes;
+}
+
+// Header
+header {
+  display: grid;
+  padding: 0 20px;
+  grid-template-areas: "logo search likes";
+  background-color: #f9f5f3;
+  @include ipad {
+    grid-template-areas:
+      "logo likes"
+      "search search";
+  }
+  // Logo
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 100px;
+    }
+  }
+  // Form
+  .search_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include ipad {
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: white;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s;
+      &:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 30px rgb(38, 57, 77);
+      }
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        width: 300px;
+        padding: 3px 8px;
+        &::placeholder {
+          color: #dad0cc;
+        }
+      }
+      button {
+        border-radius: 40px;
+        padding: 10px 30px;
+        background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+        color: white;
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  // Likes
+
+  .likes {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 60px;
+    @include ipad {
+      margin-left: unset;
+    }
+    .bi {
+      &:hover {
+        color: gray;
+      }
+    }
+
+    &:hover > .list {
+      visibility: visible;
+      opacity: 1;
+    }
+    // List
+    .list {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s, visibility 1s;
+      position: absolute;
+      bottom: -100px;
+      background-color: rgb(121, 121, 121);
+      min-width: 240px;
+      min-height: 140px;
+      border-radius: 20px;
+      padding: 10px;
+      z-index: 1000;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        border-bottom: 1px solid white;
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+        p {
+          font-size: 15px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// Main
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100%;
+  flex-grow: 1;
+  @include laptop {
+    grid-template-columns: 1fr;
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    .result-link {
+      background-color: white;
+      border-top: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 20px;
+      transition: all 0.4s;
+      &:hover {
+        background-color: #f9f5f3;
+        transform: translateY(-2px);
+      }
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      .data {
+        h4 {
+          color: #fbda61;
+          overflow: hidden;
+          max-width: 200px;
+          white-space: nowrap;
+          // Bir kapsayı içerisinde taşan kısımın gözükmemesini sağlar.
+          text-overflow: ellipsis;
+          @include laptop {
+            max-width: 500px;
+          }
+        }
+      }
+    }
+  }
+  .recipe {
+    background-color: #f9f5f3;
+  }
+  .shopping {
+  }
+}
+
+// Loader
+
+.loader {
+  margin: 80px auto;
+  img {
+    width: 150px;
+  }
+}
