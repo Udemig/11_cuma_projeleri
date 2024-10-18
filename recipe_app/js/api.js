@@ -13,6 +13,6 @@ export class Search {
 
     const data = await res.json();
     this.result = data.recipes;
-    console.log(data.recipes);
+    // console.log(data.recipes);
   }
 }
