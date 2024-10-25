@@ -44,3 +44,20 @@ export const renderResults = (recipes) => {
     elements.resultList.insertAdjacentHTML("beforeend", markup);
   });
 };
+
+// Sepetteki ürünleri ekrana basan fonksiyon
+
+export const renderBasketItems = (items) => {
+  const markup = items
+    .map(
+      (item) =>
+        `
+    <li>
+        <i class="bi bi-x" id='delete-item'></i>
+        <span>${item.title} </span>
+     </li>
+  `
+    )
+    .join("");
+  elements.basketList.innerHTML = markup;
+};

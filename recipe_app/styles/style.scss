@@ -332,6 +332,37 @@ main {
     }
   }
   .shopping {
+    padding: 5px 10px;
+    h2 {
+      font-family: "ubuntu";
+      text-align: center;
+      color: #a9c9ff;
+      margin: 30px;
+    }
+    .button-area {
+      display: flex;
+      justify-content: end;
+      button {
+        display: none;
+        background: rgb(221, 0, 0);
+        color: white;
+        cursor: pointer;
+        transition: background 300ms scale 200ms;
+        &:hover {
+          background: rgb(139, 0, 0);
+          scale: 0.9;
+        }
+      }
+    }
+    ul {
+      li {
+        padding: 5px;
+        border-bottom: 1px solid gray;
+        i {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
 
@@ -342,4 +373,8 @@ main {
   img {
     width: 150px;
   }
+}
+
+#like-btn {
+  color: pink;
 }

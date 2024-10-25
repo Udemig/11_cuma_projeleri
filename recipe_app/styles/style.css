@@ -343,9 +343,45 @@ main .recipe .directions a:hover {
   background-color: #a9c9ff;
   color: white;
 }
+main .shopping {
+  padding: 5px 10px;
+}
+main .shopping h2 {
+  font-family: "ubuntu";
+  text-align: center;
+  color: #a9c9ff;
+  margin: 30px;
+}
+main .shopping .button-area {
+  display: flex;
+  justify-content: end;
+}
+main .shopping .button-area button {
+  display: none;
+  background: rgb(221, 0, 0);
+  color: white;
+  cursor: pointer;
+  transition: background 300ms scale 200ms;
+}
+main .shopping .button-area button:hover {
+  background: rgb(139, 0, 0);
+  scale: 0.9;
+}
+main .shopping ul li {
+  padding: 5px;
+  border-bottom: 1px solid gray;
+}
+main .shopping ul li i {
+  cursor: pointer;
+}
+
 .loader {
   margin: 80px auto;
 }
 .loader img {
   width: 150px;
+}
+
+#like-btn {
+  color: pink;
 }/*# sourceMappingURL=style.css.map */

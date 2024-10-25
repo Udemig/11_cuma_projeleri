@@ -1,4 +1,4 @@
-import { elements } from "./helper.js";
+import { elements, getFromLocalStorage, setLocalStorage } from "./helper.js";
 
 export class Recipe {
   constructor() {
@@ -6,6 +6,10 @@ export class Recipe {
     this.info = {};
     // Malzemeler
     this.ingredients = [];
+    // Likelar dizisi
+    this.likes = getFromLocalStorage("likes") || [];
+    // Likeları render et
+    this.renderLike();
   }
 
   // Tarif bilgilerini alma
@@ -44,11 +48,41 @@ export class Recipe {
     return html;
   }
 
+  // Eleman like'landımı bunu kontrol et
+  isRecipeLiked() {
+    const found = this.likes.find((i) => i.id == this.info.recipe_id);
+
+    return found;
+  }
+
+  //
+  controlLike() {
+    // Likelanan elemanın verilerini al
+    const newObject = {
+      id: this.info.recipe_id,
+      img: this.info.image_url,
+      title: this.info.title,
+    };
+
+    // Eleman önceden like'landımı
+    if (this.isRecipeLiked()) {
+      this.likes = this.likes.filter((i) => i.id != newObject.id);
+    } else {
+      this.likes.push(newObject);
+    }
+
+    // likeları localeStorage ekle
+    setLocalStorage("likes", this.likes);
+
+    // arayüzü güncelle
+    this.renderRecipe(this.info);
+
+    // likeları render et
+    this.renderLike();
+  }
+
   // Tarif bilgilerini ekrana render etme
-
   renderRecipe(recipe) {
-    console.log(recipe);
-
     const markup = `<figure>
             <img
               src=${recipe.image_url}
@@ -57,7 +91,9 @@ export class Recipe {
             <h1>${recipe.title} </h1>
           
             <div class="like-area">
-              <i class="bi bi-heart"></i>
+              <i id='like-btn' class="bi ${
+                this.isRecipeLiked() ? "bi-heart-fill" : "bi-heart"
+              } "></i>
             </div>
           </figure>
        
@@ -82,5 +118,20 @@ export class Recipe {
             <a href="${recipe.publisher_url} " target="_blank">Yönerge</a>
           </div>`;
     elements.recipeArea.innerHTML = markup;
+  }
+
+  renderLike() {
+    const likedHtml = this.likes
+      .map(
+        (item) =>
+          `
+    <a href='${item.id}'>
+    <img src='${item.img}' />
+    <p>${item.title}</p>
+    </a>
+    `
+      )
+      .join("");
+    elements.likeList.innerHTML = likedHtml;
   }
 }
